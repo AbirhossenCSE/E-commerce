@@ -1,9 +1,12 @@
 import React from 'react';
+import Navbar from '../components/Navbar/Navbar';
 
 const Main = () => {
     return (
         <div>
-            <h2 className="text-2xl">Hello</h2>
+            <div className='bg-white lg:bg-black'>
+                <Navbar></Navbar>
+            </div>
         </div>
     );
 };
