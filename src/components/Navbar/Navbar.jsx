@@ -10,7 +10,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="text-white w-10/12 mx-auto py-5 px-0 lg:px-6">
+        <div className="text-white w-10/12 mx-auto py-3 px-0 lg:px-6">
             <div className="container mx-auto flex items-center justify-between lg:justify-around">
                 {/* Left: Menu Icon (Small Screens) */}
                 <div className="lg:hidden">
