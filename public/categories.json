@@ -1,0 +1,23 @@
+[
+    {
+      "category": "Glossy Tiles",
+      "icon": "https://example.com/icons/glossy-tile.png"
+    },
+    {
+      "category": "Matte Tiles",
+      "icon": "https://example.com/icons/matte-tile.png"
+    },
+    {
+      "category": "Marble Tiles",
+      "icon": "https://example.com/icons/marble-tile.png"
+    },
+    {
+      "category": "Wooden Tiles",
+      "icon": "https://example.com/icons/wooden-tile.png"
+    },
+    {
+      "category": "3D Tiles",
+      "icon": "https://example.com/icons/3d-tile.png"
+    }
+  ]
+  

@@ -1,0 +1,93 @@
+[
+    {
+      "_id": "1",
+      "name": "White Glossy Tile",
+      "description": "High-quality glossy finish tile, perfect for a modern look.",
+      "quantity": 50,
+      "image": "https://example.com/images/white-glossy-tile.jpg",
+      "category": "Glossy Tiles",
+      "price": 12.99
+    },
+    {
+      "_id": "2",
+      "name": "Black Glossy Tile",
+      "description": "Elegant black glossy tile, ideal for kitchens and bathrooms.",
+      "quantity": 40,
+      "image": "https://example.com/images/black-glossy-tile.jpg",
+      "category": "Glossy Tiles",
+      "price": 14.99
+    },
+    {
+      "_id": "3",
+      "name": "Beige Matte Tile",
+      "description": "Smooth matte finish beige tile, perfect for living rooms.",
+      "quantity": 60,
+      "image": "https://example.com/images/beige-matte-tile.jpg",
+      "category": "Matte Tiles",
+      "price": 10.99
+    },
+    {
+      "_id": "4",
+      "name": "Grey Matte Tile",
+      "description": "Durable grey matte tile, great for both indoor and outdoor spaces.",
+      "quantity": 55,
+      "image": "https://example.com/images/grey-matte-tile.jpg",
+      "category": "Matte Tiles",
+      "price": 11.99
+    },
+    {
+      "_id": "5",
+      "name": "Marble Effect Tile",
+      "description": "Luxurious tile with a marble effect for a premium look.",
+      "quantity": 35,
+      "image": "https://example.com/images/marble-effect-tile.jpg",
+      "category": "Marble Tiles",
+      "price": 24.99
+    },
+    {
+      "_id": "6",
+      "name": "Black Marble Tile",
+      "description": "Premium black marble tile for sophisticated interiors.",
+      "quantity": 30,
+      "image": "https://example.com/images/black-marble-tile.jpg",
+      "category": "Marble Tiles",
+      "price": 27.99
+    },
+    {
+      "_id": "7",
+      "name": "Wood Look Tile",
+      "description": "Tile with a wood-like texture, ideal for warm and cozy spaces.",
+      "quantity": 70,
+      "image": "https://example.com/images/wood-look-tile.jpg",
+      "category": "Wooden Tiles",
+      "price": 15.99
+    },
+    {
+      "_id": "8",
+      "name": "Dark Oak Wood Tile",
+      "description": "Natural-looking dark oak wood tile for stylish flooring.",
+      "quantity": 45,
+      "image": "https://example.com/images/dark-oak-wood-tile.jpg",
+      "category": "Wooden Tiles",
+      "price": 16.99
+    },
+    {
+      "_id": "9",
+      "name": "3D Wave Tile",
+      "description": "3D textured tile for a modern and stylish effect.",
+      "quantity": 25,
+      "image": "https://example.com/images/3d-wave-tile.jpg",
+      "category": "3D Tiles",
+      "price": 19.99
+    },
+    {
+      "_id": "10",
+      "name": "Geometric 3D Tile",
+      "description": "Innovative 3D geometric design tile for contemporary spaces.",
+      "quantity": 20,
+      "image": "https://example.com/images/geometric-3d-tile.jpg",
+      "category": "3D Tiles",
+      "price": 22.99
+    }
+  ]
+  
