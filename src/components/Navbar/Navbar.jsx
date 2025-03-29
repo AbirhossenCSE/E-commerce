@@ -10,7 +10,8 @@ const Navbar = () => {
     };
 
     return (
-        <div className="text-white w-10/12 mx-auto py-3 px-0 lg:px-6">
+        <div className="bg-white lg:bg-black">
+            <div className="text-white w-10/12 mx-auto py-3 px-0 lg:px-6">
             <div className="container mx-auto flex items-center justify-between lg:justify-around">
                 {/* Left: Menu Icon (Small Screens) */}
                 <div className="lg:hidden">
@@ -22,7 +23,7 @@ const Navbar = () => {
                 {/* Left: Logo (Centered on Small Screens) */}
                 <div className="flex items-center text-black lg:text-white">
                     <NavLink to="/" className="flex items-center gap-2">
-                        <span className="text-sm tracking-wide">DECOR</span>
+                        <span className="text-sm tracking-wide">Logo</span>
                     </NavLink>
                 </div>
 
@@ -81,6 +82,7 @@ const Navbar = () => {
                     <NavLink to="/contact" className="block py-2 text-black">Contact</NavLink>
                 </div>
             )}
+        </div>
         </div>
     );
 };

@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import img1 from '../../assets/home/01.jpg';
 import img2 from '../../assets/home/02.jpg';
 import img3 from '../../assets/home/03.png';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
@@ -41,7 +42,7 @@ const Banner = () => {
                         Discover a wide range of high-quality furniture pieces that enhance the beauty and comfort of your home.
                     </p>
                     <button className='btn btn-neutral mt-4'>
-                        Purchase Now
+                        <Link to={'/products'}>Purchase Now</Link>
                     </button>
                 </div>
                 <div className='h-full md:hidden lg:flex'>

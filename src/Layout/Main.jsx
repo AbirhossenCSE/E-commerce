@@ -6,7 +6,7 @@ import Home from '../pages/Home/Home';
 const Main = () => {
     return (
         <div>
-            <div className='bg-white lg:bg-black'>
+            <div className=''>
                 <Navbar></Navbar>
             </div>
             <Home></Home>

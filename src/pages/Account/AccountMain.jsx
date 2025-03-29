@@ -1,11 +1,18 @@
-
-import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { FaUser, FaEdit, FaShoppingBag, FaTruck, FaMapMarkerAlt, FaLock } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
 
 const AccountMain = () => {
     const location = useLocation();
+    const navigate = useNavigate();
+
+    
+    useEffect(() => {
+        if (location.pathname === "/account") {
+            navigate("/account/info", { replace: true });
+        }
+    }, [location.pathname, navigate]);
 
     const menuItems = [
         { path: "/account/info", label: "Account Info", icon: <FaUser /> },

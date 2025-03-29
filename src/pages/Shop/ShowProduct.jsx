@@ -59,9 +59,7 @@ const ShowProduct = () => {
 
     return (
         <div>
-            <div className="bg-white lg:bg-black">
-                <Navbar />
-            </div>
+            <Navbar />
             <div className="container w-10/12 mx-auto py-10 flex gap-8">
                 {/* Sidebar - Category & Price Filters */}
                 <div className="w-1/4 p-4 border-r">
