@@ -6,7 +6,7 @@
       "quantity": 50,
       "image": "https://example.com/images/white-glossy-tile.jpg",
       "category": "Glossy Tiles",
-      "price": 12.99
+      "price": 1212.99
     },
     {
       "_id": "2",
@@ -24,7 +24,7 @@
       "quantity": 60,
       "image": "https://example.com/images/beige-matte-tile.jpg",
       "category": "Matte Tiles",
-      "price": 10.99
+      "price": 100.99
     },
     {
       "_id": "4",
@@ -78,7 +78,7 @@
       "quantity": 25,
       "image": "https://example.com/images/3d-wave-tile.jpg",
       "category": "3D Tiles",
-      "price": 19.99
+      "price": 1019.99
     },
     {
       "_id": "10",
