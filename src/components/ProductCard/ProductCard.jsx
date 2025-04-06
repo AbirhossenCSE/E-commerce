@@ -1,30 +1,34 @@
-// src/components/ProductCard/ProductCard.jsx
-
-import React from "react";
-import { FaHeart, FaMusic } from "react-icons/fa";
+import React from 'react';
+import { FaHeart, FaLink } from 'react-icons/fa';
+import { FaCodeCompare } from 'react-icons/fa6';
 
 const ProductCard = ({ product }) => {
-    const { name, image, price, description } = product;
+    const originalPrice = (product.price * 1.15).toFixed(0);
+    const saved = (originalPrice - product.price).toFixed(0);
 
     return (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden border">
-            <div className="relative">
-                <img src={image} alt={name} className="w-full h-60 object-cover" />
-                <span className="absolute top-2 left-2 bg-purple-500 text-white text-xs px-3 py-1 rounded-full">
-                    save:650৳
-                </span>
+        <div className="bg-white rounded-lg shadow-xl hover:shadow-md duration-300 overflow-hidden relative">
+            <div className="absolute top-2 left-0 bg-purple-500 text-white text-sm px-4 py-2 rounded-r-full z-10">
+                save: {saved}৳
             </div>
+            <img src={product.image} alt={product.name} className="w-full h-56 object-cover" />
+
+            {/* Product Info */}
             <div className="p-4">
-                <h3 className="text-md font-semibold text-gray-800">{name}</h3>
-                <p className="text-sm text-gray-600 mb-2">{description}</p>
-                <div className="flex items-center space-x-3 mb-3">
-                    <span className="text-xl font-bold text-blue-700">{price}৳</span>
-                    <span className="text-sm line-through text-gray-400">9650৳</span>
+                <h3 className="text-md font-semibold text-gray-800 mb-1">{product.name}</h3>
+                {/* <p className="text-sm text-gray-500 mb-2">{product.description?.slice(0, 50)}...</p> */}
+
+                <div className="flex items-center gap-2">
+                    <span className="text-xl font-bold text-blue-600">{product.price}৳</span>
+                    <span className="line-through text-gray-400 text-sm">{originalPrice}৳</span>
                 </div>
-                <div className="flex items-center space-x-4 text-blue-700">
-                    <FaHeart className="text-xl cursor-pointer" />
-                    <FaMusic className="text-xl cursor-pointer" />
-                    <button className="text-sm font-semibold underline">See Details</button>
+
+                <div className="mt-4 flex items-center justify-between text-blue-500">
+                    <div className="flex gap-3 text-lg">
+                        <FaHeart className="cursor-pointer text-2xl hover:text-red-500" />
+                        <FaCodeCompare className="cursor-pointer text-2xl hover:text-gray-600" />
+                    </div>
+                    <button className="font-medium hover:underline">See Details</button>
                 </div>
             </div>
         </div>

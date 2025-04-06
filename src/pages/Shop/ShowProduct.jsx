@@ -4,9 +4,7 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import { GiLoveHowl } from "react-icons/gi";
-import { FaHeart } from "react-icons/fa";
-import { FaCodeCompare } from "react-icons/fa6";
+import ProductCard from "../../components/ProductCard/ProductCard";
 
 const ShowProduct = () => {
     const { category } = useParams();
@@ -126,18 +124,7 @@ const ShowProduct = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {filteredProducts.length > 0 ? (
                             filteredProducts.map((product) => (
-                                <div key={product._id} className="p-5 bg-white shadow-lg rounded-lg">
-                                    <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded-md" />
-                                    <h3 className="text-lg font-semibold mt-3">{product.name}</h3>
-                                    <p className="text-gray-500 text-sm">{product.description}</p>
-                                    <p className="text-orange-500 font-bold mt-2">${product.price}</p>
-
-                                    <div className="flex gap-2">
-                                        <p><FaHeart /></p>
-                                        <p><FaCodeCompare /></p>
-                                    </div>
-                                    <button>See Details</button>
-                                </div>
+                                <ProductCard key={product._id} product={product} />
                             ))
                         ) : (
                             <p className="text-gray-500">No products available for selected filters.</p>
