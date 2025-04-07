@@ -12,6 +12,7 @@ import Address from "../pages/Account/Address";
 import PasswordChange from "../pages/Account/PasswordChange";
 import Wishlist from "../pages/WishList/Wishlist";
 import Compare from "../pages/Compare/Compare";
+import ProductDetails from "../pages/ProductDetails/ProductDetails";
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
     {
         path: '/products/:category',
         element: <ShowProduct></ShowProduct>
+    },
+    {
+        path: '/product-details',
+        element: <ProductDetails></ProductDetails>
     },
     {
         path: '/wishlist',

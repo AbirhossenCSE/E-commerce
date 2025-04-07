@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaHeart, FaLink } from 'react-icons/fa';
 import { FaCodeCompare } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     const originalPrice = (product.price * 1.15).toFixed(0);
@@ -28,7 +29,13 @@ const ProductCard = ({ product }) => {
                         <FaHeart className="cursor-pointer text-2xl hover:text-red-500" />
                         <FaCodeCompare className="cursor-pointer text-2xl hover:text-gray-600" />
                     </div>
-                    <button className="font-medium hover:underline">See Details</button>
+                    <Link
+                        to="/product-details"
+                        state={{ product }}
+                        className="font-medium hover:underline"
+                    >
+                        See Details
+                    </Link>
                 </div>
             </div>
         </div>

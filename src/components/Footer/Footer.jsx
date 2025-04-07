@@ -11,7 +11,6 @@ const Footer = () => {
                     <div>
                         <div>
                             <h3 className="text-lg font-semibold text-white mb-4">Get In Touch</h3>
-                            {/* <div class="divider divider-success"></div> */}
                         </div>
                         <p className="text-sm mb-2">Address: Dhaka, Bangladesh</p>
                         <p className="text-sm mb-2">Phone: 0123456789</p>
