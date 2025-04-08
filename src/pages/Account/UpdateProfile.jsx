@@ -2,7 +2,7 @@ import React from "react";
 
 const UpdateProfile = () => {
     return (
-        <div className="w-full p-6 bg-white rounded-md shadow-md">
+        <div className="w-full p-6 bg-base-100 rounded-md shadow-md">
             <h2 className="text-2xl font-bold mb-6">Update Profile</h2>
 
             <div className="mb-4">

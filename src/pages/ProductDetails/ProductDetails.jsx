@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 import { FaStar } from 'react-icons/fa';
+import Footer from '../../components/Footer/Footer';
 
 const ProductDetails = () => {
     const { state } = useLocation();
@@ -29,10 +30,10 @@ const ProductDetails = () => {
     return (
         <div>
             <Navbar />
-            <div className="max-w-6xl mx-auto p-6 md:p-10">
+            <div className="max-w-6xl mx-auto bg-base-300 p-6 md:p-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white shadow-md rounded-lg p-6">
                     {/* Product Image */}
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center shadow-xl items-center">
                         <img
                             src={product.image}
                             alt={product.name}
@@ -41,12 +42,10 @@ const ProductDetails = () => {
                     </div>
 
                     {/* Product Info */}
-                    <div>
-                        <h3 className="text-lg text-gray-500 font-semibold mb-1">Top Ten Brand</h3>
+                    <div className='shadow-md p-4'>
                         <h2 className="text-2xl font-bold text-gray-800 mb-2">{product.name}</h2>
                         <p className="text-gray-600 mb-4">
-                            the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                            and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                        {product.description}
                         </p>
 
                         {/* Rating */}
@@ -66,7 +65,7 @@ const ProductDetails = () => {
                         {/* Delivery Info */}
                         <div className="border rounded-md p-4 bg-gray-50 mb-4">
                             <p className="text-sm font-medium text-black">Free While Global Delivery</p>
-                            <p className="text-xs text-gray-600">Get it in 4–5 weeks to <span className="text-red-500">13524</span></p>
+                            <p className="text-xs text-gray-600">Get it in 1–2 weeks to <span className="text-red-500">12345</span></p>
                         </div>
 
                         {/* Quantity Controls */}
@@ -103,6 +102,7 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

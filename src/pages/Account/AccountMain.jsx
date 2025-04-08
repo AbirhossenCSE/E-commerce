@@ -25,7 +25,7 @@ const AccountMain = () => {
 
     return (
         <div>
-            <div className="bg-white lg:bg-black">
+            <div className="bg-base-100 lg:bg-black">
                 <Navbar />
             </div>
 

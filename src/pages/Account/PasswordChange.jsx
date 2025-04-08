@@ -2,7 +2,7 @@ import React from "react";
 
 const PasswordChange = () => {
     return (
-        <div className="w-4/5 mx-auto p-6 bg-white rounded-md shadow-md">
+        <div className="w-4/5 mx-auto p-6 bg-base-100 rounded-md shadow-md">
             <h2 className="text-2xl font-bold mb-6">Change Password</h2>
 
             <div className="mb-4">

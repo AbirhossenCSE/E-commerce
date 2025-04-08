@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/f
 const Footer = () => {
     return (
         <footer className="bg-black text-gray-300 py-4">
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="w-9/12 mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center lg:text-left">
 
                     {/* Get In Touch */}
@@ -38,8 +38,8 @@ const Footer = () => {
                                 "Refund Policy"
                             ].map((link, index) => (
                                 <li key={index}>
-                                    <a href="#" className="hover:text-white">
-                                        <span className="mr-2 text-gray-500">&gt;</span> {link}
+                                    <a href="#" className="hover:text-white pl-2">
+                                         {link}
                                     </a>
                                 </li>
                             ))}

@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
     const saved = (originalPrice - product.price).toFixed(0);
 
     return (
-        <div className="bg-white rounded-lg shadow-xl hover:shadow-md duration-300 overflow-hidden relative">
+        <div className="bg-white rounded-lg shadow-xl hover:scale-105 duration-300 overflow-hidden relative">
             <div className="absolute top-2 left-0 bg-purple-500 text-white text-sm px-4 py-2 rounded-r-full z-10">
                 save: {saved}৳
             </div>
