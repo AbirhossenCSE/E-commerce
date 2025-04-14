@@ -34,7 +34,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            {/* Right Section */}
+            {/* Right Section not fixed*/}
             <div className='md:w-1/3 flex flex-col justify-between h-[500px] space-y-4'>
                 <div className='p-6 h-full bg-base-200 rounded-sm shadow-md flex-1 flex flex-col'>
                     <h1 className='font-bold text-3xl mb-3'>Choose Your Furniture</h1>
