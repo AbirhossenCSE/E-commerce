@@ -14,7 +14,7 @@ const ShowProduct = () => {
     const [priceRange, setPriceRange] = useState([1, 3000]);
 
     useEffect(() => {
-        fetch("/menu.json")
+        fetch("http://localhost:5000/product")
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, []);

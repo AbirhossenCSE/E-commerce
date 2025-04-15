@@ -4,12 +4,13 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import auth from "../../components/firebase/firebase.init";
 import SocialLogin from "../../components/Navbar/SocialLogin";
-// import useAxiosPublic from "../hooks/useAxiosPublic";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+
 
 const Register = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    // const axiosPublic = useAxiosPublic();
+    const axiosPublic = useAxiosPublic();
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -31,16 +32,16 @@ const Register = () => {
 
             await updateProfile(user, { displayName: name, photoURL });
 
-            // const userData = {
-            //     uid: user.uid,
-            //     name,
-            //     email,
-            //     photoURL,
-            //     createdAt: new Date(),
-            //     role: "user"
-            // };
+            const userData = {
+                uid: user.uid,
+                name,
+                email,
+                photoURL,
+                createdAt: new Date(),
+                role: "user"
+            };
 
-            // await axiosPublic.post("/users", userData);
+            await axiosPublic.post("/users", userData);
 
             Swal.fire({
                 title: "Success!",
