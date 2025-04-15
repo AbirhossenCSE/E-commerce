@@ -14,6 +14,7 @@ import Wishlist from "../pages/WishList/Wishlist";
 import Compare from "../pages/Compare/Compare";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import Register from "../pages/Register/Register";
+import SignIn from "../pages/SignIn/SignIn";
 
 
 export const router = createBrowserRouter([
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
     {
         path: '/register',
         element: <Register></Register>,
+    },
+    {
+        path: '/signin',
+        element: <SignIn></SignIn>,
     },
 
 ]);

@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
 import auth from "../../components/firebase/firebase.init";
+import SocialLogin from "../../components/Navbar/SocialLogin";
 // import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const Register = () => {
@@ -110,10 +111,10 @@ const Register = () => {
                 </form>
                 <p className="mt-3 text-center">
                     Already have an account?{" "}
-                    <Link to="/signin" className="text-blue-500 hover:underline">Login</Link>
+                    <Link to="/signin" className="text-blue-500 hover:underline">Sign-In</Link>
                 </p>
                 <div className="mt-4">
-                    {/* <SocialLogin /> */}
+                    <SocialLogin />
                 </div>
             </div>
         </div>
