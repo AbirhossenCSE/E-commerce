@@ -13,6 +13,7 @@ import PasswordChange from "../pages/Account/PasswordChange";
 import Wishlist from "../pages/WishList/Wishlist";
 import Compare from "../pages/Compare/Compare";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
+import Register from "../pages/Register/Register";
 
 
 export const router = createBrowserRouter([
@@ -70,6 +71,10 @@ export const router = createBrowserRouter([
                 element: <PasswordChange></PasswordChange>
             },
         ]
+    },
+    {
+        path: '/register',
+        element: <Register></Register>,
     },
 
 ]);
