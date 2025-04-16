@@ -39,6 +39,35 @@ const ProductCard = ({ product }) => {
         }
     };
 
+    const handleAddToCompare = async () => {
+        if (!user) return alert("Please log in to compare products.");
+
+        const compareItem = {
+            productId: product._id,
+            name: product.name,
+            image: product.image,
+            price: product.price,
+            originalPrice,
+            saved,
+            userName: user.displayName,
+            userEmail: user.email
+        };
+
+        try {
+            const response = await axios.post('http://localhost:5000/compare', compareItem);
+
+            if (response.data.message === "Already in compare list") {
+                alert("This product is already in your compare list.");
+            } else if (response.status === 201) {
+                alert("Product added to compare list!");
+            }
+        } catch (error) {
+            console.error("Error adding to compare list:", error);
+            alert("Something went wrong. Please try again.");
+        }
+    };
+
+
     return (
         <div className="bg-white rounded-lg shadow-xl hover:scale-105 duration-300 overflow-hidden relative">
             <div className="absolute top-2 left-0 bg-purple-500 text-white text-sm px-4 py-2 rounded-r-full z-10">
@@ -57,7 +86,11 @@ const ProductCard = ({ product }) => {
                             onClick={handleAddToWishlist}
                             className="cursor-pointer text-2xl hover:text-red-500"
                         />
-                        <FaCodeCompare className="cursor-pointer text-2xl hover:text-gray-600" />
+                        <FaCodeCompare
+                            onClick={handleAddToCompare}
+                            className="cursor-pointer text-2xl hover:text-gray-600"
+                        />
+
                     </div>
                     <Link
                         to="/product-details"
