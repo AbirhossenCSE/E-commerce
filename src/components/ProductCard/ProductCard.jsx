@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { FaHeart, FaLink } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import { FaCodeCompare } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import AuthContext from '../context/AuthContext';
 
 const ProductCard = ({ product }) => {
@@ -10,37 +11,49 @@ const ProductCard = ({ product }) => {
     const saved = (originalPrice - product.price).toFixed(0);
     const { user } = useContext(AuthContext);
 
+    // SweetAlert toast config
+    const showToast = (icon, message) => {
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: icon,
+            title: message,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+        });
+    };
+
     const handleAddToWishlist = async () => {
-        if (!user) return alert("Please log in to add to wishlist.");
+        if (!user) return showToast('warning', 'Please log in to add to wishlist.');
 
         const wishlistItem = {
-            productId: product._id, // this will be used to check uniqueness
+            productId: product._id,
             name: product.name,
             image: product.image,
             price: product.price,
             originalPrice,
             saved,
             userName: user.displayName,
-            userEmail: user.email
+            userEmail: user.email,
         };
 
         try {
             const response = await axios.post('http://localhost:5000/withlist', wishlistItem);
 
-            if (response.data.message === "Already in wishlist") {
-                alert("This product is already in your wishlist.");
+            if (response.data.message === 'Already in wishlist') {
+                showToast('info', 'Already in your wishlist.');
             } else if (response.status === 201) {
-                alert("Product added to wishlist!");
+                showToast('success', 'Added to wishlist!');
             }
-
         } catch (error) {
-            console.error("Error adding to wishlist:", error);
-            alert("Something went wrong. Please try again.");
+            console.error('Error adding to wishlist:', error);
+            showToast('error', 'Something went wrong.');
         }
     };
 
     const handleAddToCompare = async () => {
-        if (!user) return alert("Please log in to compare products.");
+        if (!user) return showToast('warning', 'Please log in to compare products.');
 
         const compareItem = {
             productId: product._id,
@@ -50,23 +63,22 @@ const ProductCard = ({ product }) => {
             originalPrice,
             saved,
             userName: user.displayName,
-            userEmail: user.email
+            userEmail: user.email,
         };
 
         try {
             const response = await axios.post('http://localhost:5000/compare', compareItem);
 
-            if (response.data.message === "Already in compare list") {
-                alert("This product is already in your compare list.");
+            if (response.data.message === 'Already in compare list') {
+                showToast('info', 'Already in compare list.');
             } else if (response.status === 201) {
-                alert("Product added to compare list!");
+                showToast('success', 'Added to compare list!');
             }
         } catch (error) {
-            console.error("Error adding to compare list:", error);
-            alert("Something went wrong. Please try again.");
+            console.error('Error adding to compare list:', error);
+            showToast('error', 'Something went wrong.');
         }
     };
-
 
     return (
         <div className="bg-white rounded-lg shadow-xl hover:scale-105 duration-300 overflow-hidden relative">
@@ -90,7 +102,6 @@ const ProductCard = ({ product }) => {
                             onClick={handleAddToCompare}
                             className="cursor-pointer text-2xl hover:text-gray-600"
                         />
-
                     </div>
                     <Link
                         to="/product-details"

@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { FaUser, FaEdit, FaShoppingBag, FaTruck, FaMapMarkerAlt, FaLock } from "react-icons/fa";
 import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 import AuthContext from "../../components/context/AuthContext";
 
 const AccountMain = () => {
@@ -70,6 +71,7 @@ const AccountMain = () => {
                     <Outlet />
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

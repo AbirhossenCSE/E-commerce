@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import AuthContext from '../../components/context/AuthContext';
+import Footer from '../../components/Footer/Footer';
 import { FaShoppingCart, FaTrashAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Compare = () => {
     const axiosPublic = useAxiosPublic();
@@ -27,12 +29,42 @@ const Compare = () => {
     }, [user?.email, axiosPublic]);
 
     const handleRemove = async (id) => {
-        try {
-            await axiosPublic.delete(`http://localhost:5000/compare/${id}`);
-            setCompareItems(prev => prev.filter(item => item._id !== id));
-        } catch (error) {
-            console.error('Error deleting item:', error);
-            alert('Failed to delete item. Please try again.');
+        const confirm = await Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, remove it!',
+        });
+
+        if (confirm.isConfirmed) {
+            try {
+                await axiosPublic.delete(`http://localhost:5000/compare/${id}`);
+                setCompareItems(prev => prev.filter(item => item._id !== id));
+
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Removed from compare list!',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                });
+            } catch (error) {
+                console.error('Error deleting item:', error);
+                Swal.fire({
+                    toast: true,
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Failed to remove item',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                });
+            }
         }
     };
 
@@ -40,8 +72,8 @@ const Compare = () => {
         <div>
             <Navbar />
 
-            <div className='w-9/12 mx-auto mt-10'>
-                <h2 className="text-4xl font-bold mb-6 ">Compare Products</h2>
+            <div className='w-9/12 mx-auto my-10'>
+                <h2 className="text-4xl font-bold mb-6">Compare Products</h2>
 
                 {compareItems.length === 0 ? (
                     <p className="text-center text-gray-500">No items in compare list.</p>
@@ -62,7 +94,17 @@ const Compare = () => {
                                 <div className="mt-auto flex justify-between items-center">
                                     <button
                                         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 flex items-center gap-2"
-                                        onClick={() => alert('Added to cart! (implement logic)')}
+                                        onClick={() => {
+                                            Swal.fire({
+                                                toast: true,
+                                                position: 'top-end',
+                                                icon: 'info',
+                                                title: 'Added to cart! (implement logic)',
+                                                showConfirmButton: false,
+                                                timer: 3000,
+                                                timerProgressBar: true,
+                                            });
+                                        }}
                                     >
                                         <FaShoppingCart /> Add to Cart
                                     </button>
@@ -78,6 +120,7 @@ const Compare = () => {
                     </div>
                 )}
             </div>
+            <Footer></Footer>
         </div>
     );
 };

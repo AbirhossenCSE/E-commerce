@@ -53,11 +53,11 @@ const Navbar = () => {
                     </div>
 
                     {/* Center: Search Bar (Hidden on Small Screens) */}
-                    <div className="flex-1 mx-18 relative hidden lg:block">
+                    <div className="flex-1 mx-18 p-2 relative hidden lg:block">
                         <input
                             type="text"
                             placeholder="Search Products"
-                            className="w-full bg-white px-4 py-4 text-black rounded-sm"
+                            className="w-full bg-white px-6 py-3 text-black rounded-sm"
                         />
                         <FaSearch className="absolute right-4 top-6 text-gray-500 cursor-pointer" />
                     </div>
