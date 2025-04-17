@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://e-commerce-server-jade-six.vercel.app'
 })
 
 const useAxiosPublic = () => {

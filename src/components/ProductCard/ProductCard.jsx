@@ -39,7 +39,7 @@ const ProductCard = ({ product }) => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/withlist', wishlistItem);
+            const response = await axios.post('https://e-commerce-server-jade-six.vercel.app/withlist', wishlistItem);
 
             if (response.data.message === 'Already in wishlist') {
                 showToast('info', 'Already in your wishlist.');
@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5000/compare', compareItem);
+            const response = await axios.post('https://e-commerce-server-jade-six.vercel.app/compare', compareItem);
 
             if (response.data.message === 'Already in compare list') {
                 showToast('info', 'Already in compare list.');
@@ -85,7 +85,12 @@ const ProductCard = ({ product }) => {
             <div className="absolute top-2 left-0 bg-purple-500 text-white text-sm px-4 py-2 rounded-r-full z-10">
                 save: {saved}৳
             </div>
-            <img src={product.image} alt={product.name} className="w-full h-56 object-cover" />
+
+            <Link to="/product-details" state={{ product }}>
+                <img src={product.image} alt={product.name} className="w-full h-56 object-cover cursor-pointer" />
+            </Link>
+
+
             <div className="p-4">
                 <h3 className="text-md font-semibold text-gray-800 mb-1">{product.name}</h3>
                 <div className="flex items-center gap-2">

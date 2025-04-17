@@ -37,16 +37,16 @@ const AccountMain = () => {
             <div className="container w-10/12 mx-auto my-10 flex flex-col sm:flex-col md:flex-row gap-6">
                 <div className="bg-white shadow-md rounded-lg p-5 w-full sm:w-full md:w-1/3">
                     <div className="text-center mb-5">
-                        <div className="w-20 h-20 mx-auto bg-gray-200 rounded-full flex items-center justify-center">
+                        <div className="w-20 h-20 mx-auto bg-base-200 rounded-full flex items-center justify-center">
                             {user ? (
                                 <img src={user?.photoURL} alt="User Avatar" className="w-full h-full rounded-full object-cover" />
                             ) : (
-                                <FaUser size={40} className="text-gray-500" />
+                                <FaUser size={40} className="text-base-500" />
                             )}
                         </div>
 
                         <h2 className="text-xl font-bold mt-3">Hello, {user?.displayName}</h2>
-                        <p className="text-gray-500">Welcome to your account</p>
+                        <p className="text-base-500">Welcome to your account</p>
                     </div>
 
                     {/* Menu */}
@@ -55,7 +55,7 @@ const AccountMain = () => {
                             <li key={item.path}>
                                 <Link
                                     to={item.path}
-                                    className={`flex items-center px-4 py-3 rounded-md cursor-pointer transition ${location.pathname === item.path ? "bg-blue-100 text-blue-600 font-semibold" : "hover:bg-gray-100"
+                                    className={`flex items-center px-4 py-3 rounded-md cursor-pointer transition ${location.pathname === item.path ? "bg-blue-100 text-blue-600 font-semibold" : "hover:bg-base-100"
                                         }`}
                                 >
                                     <span className="mr-3 text-lg">{item.icon}</span>

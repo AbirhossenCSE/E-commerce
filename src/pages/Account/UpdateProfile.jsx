@@ -81,14 +81,14 @@ const UpdateProfile = () => {
         }
     };
 
-    if (loading) return <p className="p-6 text-gray-500">Loading...</p>;
+    if (loading) return <p className="p-6">Loading...</p>;
 
     return (
         <form onSubmit={handleSubmit} className="w-11/12 mx-auto p-6 bg-base-100 rounded-md shadow-md">
             <h2 className="text-2xl font-bold mb-6">Update Profile</h2>
 
             <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
+                <label htmlFor="name" className="block text-sm font-bold mb-2">
                     Full Name
                 </label>
                 <input
@@ -102,7 +102,7 @@ const UpdateProfile = () => {
             </div>
 
             <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                <label htmlFor="email" className="block text-sm font-bold mb-2">
                     Email
                 </label>
                 <input
@@ -110,12 +110,12 @@ const UpdateProfile = () => {
                     id="email"
                     value={userData?.email}
                     readOnly
-                    className="w-full px-3 py-2 bg-gray-100 border rounded-md"
+                    className="w-full px-3 py-2 bg-base-100 border rounded-md"
                 />
             </div>
 
             <div className="mb-4">
-                <label htmlFor="dob" className="block text-gray-700 text-sm font-bold mb-2">
+                <label htmlFor="dob" className="block text-sm font-bold mb-2">
                     Date of Birth
                 </label>
                 <input
@@ -129,7 +129,7 @@ const UpdateProfile = () => {
             </div>
 
             <div className="mb-6">
-                <label htmlFor="phone" className="block text-gray-700 text-sm font-bold mb-2">
+                <label htmlFor="phone" className="block text-sm font-bold mb-2">
                     Phone
                 </label>
                 <input

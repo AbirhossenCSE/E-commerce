@@ -13,7 +13,7 @@ const Wishlist = () => {
     useEffect(() => {
         const fetchWishlist = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/withlist');
+                const res = await axios.get('https://e-commerce-server-jade-six.vercel.app/withlist');
                 const userWishlist = res.data.filter(item => item.userEmail === user?.email);
                 setWishlist(userWishlist);
             } catch (err) {
@@ -39,7 +39,7 @@ const Wishlist = () => {
 
         if (confirm.isConfirmed) {
             try {
-                await axios.delete(`http://localhost:5000/withlist/${id}`);
+                await axios.delete(`https://e-commerce-server-jade-six.vercel.app/withlist/${id}`);
                 setWishlist(prev => prev.filter(item => item._id !== id));
 
                 Swal.fire({

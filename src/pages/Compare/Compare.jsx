@@ -14,7 +14,7 @@ const Compare = () => {
     useEffect(() => {
         const fetchCompareItems = async () => {
             try {
-                const res = await axiosPublic.get('http://localhost:5000/compare');
+                const res = await axiosPublic.get('https://e-commerce-server-jade-six.vercel.app/compare');
                 const allItems = res.data;
                 const filtered = allItems.filter(item => item.userEmail === user?.email);
                 setCompareItems(filtered);
@@ -41,7 +41,7 @@ const Compare = () => {
 
         if (confirm.isConfirmed) {
             try {
-                await axiosPublic.delete(`http://localhost:5000/compare/${id}`);
+                await axiosPublic.delete(`https://e-commerce-server-jade-six.vercel.app/compare/${id}`);
                 setCompareItems(prev => prev.filter(item => item._id !== id));
 
                 Swal.fire({

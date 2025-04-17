@@ -14,7 +14,7 @@ const ShowProduct = () => {
     const [priceRange, setPriceRange] = useState([1, 3000]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/product")
+        fetch("https://e-commerce-server-jade-six.vercel.app/product")
             .then((res) => res.json())
             .then((data) => setProducts(data));
     }, []);

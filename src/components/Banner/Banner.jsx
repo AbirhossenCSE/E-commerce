@@ -2,9 +2,9 @@ import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 
-import img1 from '../../assets/home/01.jpg';
-import img2 from '../../assets/home/02.jpg';
-import img3 from '../../assets/home/03.png';
+import img1 from '../../assets/home/01.webp';
+import img2 from '../../assets/home/02.webp';
+import img3 from '../../assets/home/03.webp';
 import { Link } from 'react-router-dom';
 
 const Banner = () => {
@@ -18,7 +18,7 @@ const Banner = () => {
                         infiniteLoop
                         showThumbs={false}
                         showStatus={false}
-                        interval={3000}
+                        interval={2000}
                         transitionTime={800}
                     >
                         <div>
@@ -35,7 +35,7 @@ const Banner = () => {
             </div>
 
             {/* Right Section not fixed*/}
-            <div className='md:w-1/3 flex flex-col justify-between h-[500px] space-y-4'>
+            <div className='md:w-1/3 flex flex-col justify-between space-y-4'>
                 <div className='p-6 h-full bg-base-200 rounded-sm shadow-md flex-1 flex flex-col'>
                     <h1 className='font-bold text-3xl mb-3'>Choose Your Furniture Here</h1>
                     <p className='flex-grow'>
@@ -55,4 +55,3 @@ const Banner = () => {
 };
 
 export default Banner;
-

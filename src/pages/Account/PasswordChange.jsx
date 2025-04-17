@@ -6,7 +6,7 @@ const PasswordChange = () => {
             <h2 className="text-2xl font-bold mb-6">Change Password</h2>
 
             <div className="mb-4">
-                <label htmlFor="currentPassword" className="block text-gray-700 text-sm font-bold mb-2">
+                <label htmlFor="currentPassword" className="block text-sm font-bold mb-2">
                     Current Password
                 </label>
                 <input
@@ -18,7 +18,7 @@ const PasswordChange = () => {
             </div>
 
             <div className="mb-4">
-                <label htmlFor="newPassword" className="block text-gray-700 text-sm font-bold mb-2">
+                <label htmlFor="newPassword" className="block text-sm font-bold mb-2">
                     New Password
                 </label>
                 <input
@@ -30,7 +30,7 @@ const PasswordChange = () => {
             </div>
 
             <div className="mb-6">
-                <label htmlFor="confirmPassword" className="block text-gray-700 text-sm font-bold mb-2">
+                <label htmlFor="confirmPassword" className="block  text-sm font-bold mb-2">
                     Confirm Password
                 </label>
                 <input
