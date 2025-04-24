@@ -13,12 +13,12 @@ const FeaturedProducts = () => {
     }, []);
 
     return (
-        <div className="mx-auto">
+        <div className="mx-auto bg-base-300 rounded-xl">
             <SectionTitle
                 heading="Featured Products"
                 subHeading="Check & Get Your Desired Product!"
             />
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-2 p-4 md:grid-cols-2 lg:grid-cols-5">
                 {products.map((product) => (
                     <ProductCard key={product._id} product={product} />
                 ))}

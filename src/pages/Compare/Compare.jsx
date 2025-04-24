@@ -72,7 +72,7 @@ const Compare = () => {
         <div>
             <Navbar />
 
-            <div className='w-9/12 mx-auto my-10'>
+            <div className='w-10/12 mx-auto my-10'>
                 <h2 className="text-4xl font-bold mb-6">Compare Products</h2>
 
                 {compareItems.length === 0 ? (
@@ -106,7 +106,7 @@ const Compare = () => {
                                             });
                                         }}
                                     >
-                                        <FaShoppingCart /> Add to Cart
+                                        <FaShoppingCart />Add to Cart
                                     </button>
                                     <button
                                         className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 flex items-center gap-2"
